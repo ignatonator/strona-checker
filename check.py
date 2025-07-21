@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-PUSHBULLET_API_KEY = os.environ['PUSHBULLET_API_KEY']
-
+PUSHBULLET_API_KEY = os.environ.get('PUSHBULLET_API_KEY')
+if not PUSHBULLET_API_KEY:
+    raise ValueError("PUSHBULLET_API_KEY nie został ustawiony jako zmienna środowiskowa")
 
 def send_pushbullet_notification(title, body):
     data = {
