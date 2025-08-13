@@ -26,7 +26,6 @@ def check_site():
             send_discord_notification(f"⚠️ Strona {URL} zwraca błąd bazy danych WordPressa!")
         else:
             print("✅ Strona działa poprawnie.")
-            send_discord_notification("wszystko git")
     except requests.exceptions.RequestException as e:
         send_discord_notification(f"🚨 Strona {URL} jest niedostępna! Błąd: {e}")
 
